@@ -1,0 +1,1 @@
+This folder will store logic related to external communications, such as APIs and more.

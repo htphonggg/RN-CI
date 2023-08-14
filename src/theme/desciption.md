@@ -1,0 +1,1 @@
+This folder will store global styles for your project, including fonts, colors, metrics, and more.

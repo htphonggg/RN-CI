@@ -1,0 +1,1 @@
+This folder will store all custom hooks used in the project.

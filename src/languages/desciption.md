@@ -1,0 +1,1 @@
+This folder will store translation files for different languages that you're using in your project.

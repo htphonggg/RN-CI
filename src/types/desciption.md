@@ -1,0 +1,1 @@
+If you are using TypeScript in your project, this folder will store interfaces, types, and more for navigation, screens, components, and other related elements.

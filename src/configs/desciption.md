@@ -1,0 +1,1 @@
+This folder will store global configurations for your project, such as API configuration, app configuration, and more.

@@ -1,0 +1,1 @@
+This folder will store static values used within the project.
