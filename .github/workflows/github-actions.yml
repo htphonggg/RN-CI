@@ -11,8 +11,6 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
-        with:
-          ref: develop
       - name: Install NodeJs
         uses: actions/setup-node@v3
         with:
