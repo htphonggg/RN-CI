@@ -29,6 +29,4 @@ jobs:
     needs: install-node
     steps:
       - name: Test Eslint
-        run: |
-          cd rn-ci/rn-ci
-          yarn lint-staged
+        run: npm run test:lint
