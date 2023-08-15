@@ -12,4 +12,4 @@ jobs:
     steps:
       - name: Test Eslint
         run: yarn lint-staged
-        working-directory: '.'
+        working-directory: './'
