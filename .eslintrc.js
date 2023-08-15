@@ -1,27 +1,52 @@
 module.exports = {
+  root: true,
   env: {
-    es2021: true,
-    node: true
+    'react-native/react-native': true
   },
   extends: [
     'eslint:recommended',
     'plugin:react/recommended',
-    'plugin:@typescript-eslint/recommended'
+    'plugin:react-hooks/recommended',
+    'prettier'
   ],
-  overrides: [],
+  settings: {
+    react: {
+      version: 'detect'
+    }
+  },
+  plugins: [
+    'react',
+    'react-native',
+    '@typescript-eslint',
+    'react-hooks',
+    'prettier'
+  ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module'
+    ecmaVersion: 2020,
+    sourceType: 'module',
+    ecmaFeatures: {
+      jsx: true
+    },
+    extraFileExtensions: []
   },
-  plugins: ['react', 'react-native', '@typescript-eslint'],
+  ignorePatterns: ['.eslintrc.js'],
   rules: {
     semi: ['error', 'never'],
-    quotes: ['error', 'single'],
-    'no-var': 'error',
-    'no-multi-spaces': 'error',
-    'no-unused-vars': 'error',
-    'no-trailing-spaces': 'error',
-    'react-native/no-inline-styles': 'error'
+    'react-native/no-inline-styles': 'warn',
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'warn',
+    'no-unused-vars': 'off',
+    '@typescript-eslint/no-unused-vars': [
+      'warn',
+      {
+        argsIgnorePattern: '^_'
+      }
+    ],
+    '@typescript-eslint/no-shadow': ['error'],
+    'no-shadow': 'off',
+    'no-undef': 'off',
+    'no-empty': 'warn',
+    'react/no-children-prop': 'off'
   }
 }
