@@ -12,5 +12,5 @@ jobs:
     steps:
       - name: Test Eslint
         run: |
-        cd spacebar/spacebar 
+        cd ../..
         yarn lint-staged
