@@ -9,6 +9,7 @@ jobs:
     name: Install NodeJs
     runs-on: ubuntu-latest
     steps:
+      - name: Install Node
       run: apk add nodejs npm
   test:
     name: Test format code
