@@ -10,7 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Install Node
-      run: apk add nodejs npm
+        run: apk add nodejs npm
+
   test:
     name: Test format code
     runs-on: ubuntu-latest
