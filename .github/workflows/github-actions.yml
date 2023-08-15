@@ -29,4 +29,6 @@ jobs:
     needs: install-node
     steps:
       - name: Test Eslint
-        run: yarn lint-staged
+        run: |
+          cd spacebar/spacebar
+          yarn run build
