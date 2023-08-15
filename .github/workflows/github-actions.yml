@@ -30,5 +30,4 @@ jobs:
     steps:
       - name: Test Eslint
         run: |
-          cd RN-CI/RN-CI
-          yarn run build
+          yarn lint-staged
