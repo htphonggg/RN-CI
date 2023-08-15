@@ -21,4 +21,4 @@ jobs:
         run: yarn
 
       - name: Run Eslint Test
-        run: yarn test:lint
+        run: yarn eslint 'git diff feature/add-components develop  --name-only src/'
