@@ -11,5 +11,5 @@ jobs:
 
     steps:
       - name: Test Eslint
+        uses: actions/checkout@v3
         run: yarn lint-staged
-        working-directory: ../../
