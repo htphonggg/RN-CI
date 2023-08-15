@@ -5,11 +5,14 @@ on:
     branches: ['develop']
 
 jobs:
+  install-node:
+    name: Install NodeJs
+    runs-on: ubuntu-latest
+    run: apk add nodejs npm
   test:
     name: Test format code
     runs-on: ubuntu-latest
-
+    needs: install-node
     steps:
       - name: Test Eslint
         run: yarn lint-staged
-        working-directory: '.'
