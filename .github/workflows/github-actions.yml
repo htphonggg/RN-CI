@@ -9,16 +9,18 @@ jobs:
     name: Install NodeJs
     runs-on: ubuntu-latest
     steps:
-      - name: Install NodeJs
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
       - name: Check out repository code
         uses: actions/checkout@v3
         with:
           ref: develop
-      - name: Run NPM install
-        uses: bahmutov/npm-install@v1
+      - name: Install NodeJs
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Run Yarn install
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: install
 
   test:
     name: Test format code
@@ -26,4 +28,4 @@ jobs:
     needs: install-node
     steps:
       - name: Test Eslint
-        run: npm run test:lint
+        run: yarn lint-staged
