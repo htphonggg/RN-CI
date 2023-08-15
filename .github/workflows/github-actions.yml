@@ -9,8 +9,9 @@ jobs:
     name: Install NodeJs
     runs-on: ubuntu-latest
     steps:
-      - name: Install Node
-        run: apk add nodejs npm
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
 
   test:
     name: Test format code
