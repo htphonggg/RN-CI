@@ -23,7 +23,13 @@ jobs:
       - name: Run Eslint Test
         run: yarn test:lint
 
-      - name: Upload artifact
+      - name: Create Artifact
         run: |
           mkdir -p path/to/artifact
           echo hello > path/to/artifact/world.txt
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: my-artifact
+          path: path/to/artifact/world.txt
