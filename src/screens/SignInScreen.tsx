@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import { Dimensions, StatusBar, StyleSheet, View } from 'react-native'
 
-import Button from '../components/Button'
-import Input from '../components/Input'
-import Label from '../components/Label'
-import KeyboardAware from '../components/KeyboardAware'
+import Button from '../components/Button';
+import Input from '../components/Input';
+import Label from '../components/Label';
+import KeyboardAware from '../components/KeyboardAware';
 
 import { emailValidation, passwordValidation } from '../utils/validator'
+import { SignInScreenStyle } from './styles/SignInScreenStyle'
 
 const SignInScreen = () => {
   const styles = SignInScreenStyle()
@@ -20,6 +21,7 @@ const SignInScreen = () => {
   }
 
   const handleChangePassword = (value: string) => {
+    console.log('value:', value)
     setErrorPassword('')
     if (!passwordValidation(value))
       return setErrorPassword('Password is incorrect format.')
@@ -56,37 +58,3 @@ const SignInScreen = () => {
 }
 
 export default SignInScreen
-
-const SignInScreenStyle = () => {
-  const { height } = Dimensions.get('window')
-  const statusBarHeight = StatusBar.currentHeight ?? 0
-  const SCREEN_HEIGHT = height - statusBarHeight
-
-  return StyleSheet.create({
-    container: {
-      backgroundColor: 'white',
-      justifyContent: 'center',
-      alignItems: 'center',
-      height: SCREEN_HEIGHT
-    },
-    labelStyle: {
-      fontSize: 32
-    },
-    inputWrapper: {
-      paddingHorizontal: 16,
-      marginVertical: '10%'
-    },
-    textSignIn: {
-      color: 'white',
-      fontSize: 16
-    },
-    textError: {
-      fontSize: 12,
-      color: 'red',
-      marginVertical: 4
-    },
-    inputError: {
-      borderColor: 'red'
-    }
-  })
-}
