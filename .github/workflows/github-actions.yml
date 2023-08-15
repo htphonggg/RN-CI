@@ -9,14 +9,14 @@ jobs:
     name: Install NodeJs
     runs-on: ubuntu-latest
     steps:
-      - name: Check out repository code
+      - name: Install NodeJs
         uses: actions/setup-node@v3
         with:
           node-version: 18
       - name: Check out repository code
         uses: actions/checkout@v3
         with:
-          path: develop
+          ref: develop
 
   test:
     name: Test format code
