@@ -5,17 +5,21 @@ on:
     branches: ['develop']
 
 jobs:
-  install-node:
-    name: Install NodeJs
+  unit-test:
+    name: Unit Test Job
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
+
       - name: Install NodeJs
         uses: actions/setup-node@v3
         with:
           node-version: 18
+
       - name: Run Yarn install
         uses: borales/actions-yarn@v4
         with:
           cmd: install
+      - name: Run Eslint Test
+        run: yarn test:lint
