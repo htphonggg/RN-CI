@@ -2,8 +2,7 @@ name: CI
 
 on:
   pull_request:
-    branches: [ "develop" ]
-    types: review_requested
+    branches: ['develop']
 
 jobs:
   test:
@@ -11,5 +10,5 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Test Eslint
-      run: yarn lint-staged
+      - name: Test Eslint
+        run: yarn lint-staged
