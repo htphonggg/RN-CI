@@ -1,0 +1,15 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [ "develop" ]
+    types: review_requested
+
+jobs:
+  test:
+    name: Test format code
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Test Eslint
+      run: yarn lint-staged
