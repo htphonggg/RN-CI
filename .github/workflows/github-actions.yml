@@ -22,3 +22,8 @@ jobs:
 
       - name: Run Eslint Test
         run: yarn test:lint
+
+      - name: Upload artifact
+        run: |
+          mkdir -p path/to/artifact
+          echo hello > path/to/artifact/world.txt
