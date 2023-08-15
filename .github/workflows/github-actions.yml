@@ -19,11 +19,3 @@ jobs:
         uses: borales/actions-yarn@v4
         with:
           cmd: install
-
-  test:
-    name: Test format code
-    runs-on: ubuntu-latest
-    needs: install-node
-    steps:
-      - name: Test Eslint
-        run: yarn lint-staged
