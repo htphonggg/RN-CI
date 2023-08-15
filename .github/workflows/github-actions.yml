@@ -21,6 +21,4 @@ jobs:
         run: yarn
 
       - name: Run Eslint Test
-        run: |
-          yarn eslint --ext .ts
-          yarn eslint --ext .tsx
+        run: yarn eslint --ext .ts,.tsx
