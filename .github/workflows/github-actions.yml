@@ -34,8 +34,15 @@ jobs:
       - name: Run Yarn install
         run: yarn
       
-      - name: Build Android Application
+      - name: Build start
         run: |
           cd android
           ./gradlew clean
           ./gradlew assembleRelease
+          cd ..
+
+      - name: Upload build
+        uses: actions/upload-artifact@v3
+        with:
+          name: 
+          path: android/app/build/outputs/apk/release/app-release.apk
