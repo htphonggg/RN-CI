@@ -21,6 +21,4 @@ jobs:
         run: yarn
 
       - name: Run Eslint Test
-        run: |
-          ESLINT_DIFF_COMMIT=$(git diff HEAD HEAD~1 --name-only src/)
-          yarn eslint $ESLINT_DIFF_COMMIT
+        run: yarn test:lint
