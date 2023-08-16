@@ -9,6 +9,9 @@ jobs:
     name: Build Android
     runs-on: ubuntu-latest
     steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+
       - name: Install NodeJs
         uses: actions/setup-node@v3
         with:
@@ -19,14 +22,20 @@ jobs:
         with:
           java-version: '11'
           distribution: zulu
-          # architecture: x64
-          # cache: gradle
+          architecture: x64
+          cache: gradle
 
-      - name: Setup Android SDK
-        uses: android-actions/setup-android@v2
+      - name: Validate Gradlew
+        uses: gradle/wrapper-validation-action@v1
 
-      # - name: Check out repository code
-      #   uses: actions/checkout@v3
+      # - name: Setup Android SDK
+      #   uses: android-actions/setup-android@v2
 
-      # - name: Run Yarn install
-      #   run: yarn
+      - name: Run Yarn install
+        run: yarn
+      
+      - name: Build Android Application
+        run: |
+          cd android
+          ./gradlew clean
+          ./gradlew assembleRelease
