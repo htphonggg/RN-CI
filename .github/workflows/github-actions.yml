@@ -18,8 +18,7 @@ jobs:
           node-version: 18
 
       - name: Run Yarn install
-        uses: borales/actions-yarn@v4
-        with:
-          cmd: install
+        run: yarn
+
       - name: Run Eslint Test
         run: yarn test:lint
